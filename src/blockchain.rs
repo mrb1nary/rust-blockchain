@@ -41,4 +41,8 @@ impl Blockchain {
         }
         true
     }
+
+    pub fn total_blocks(&self) -> usize {
+        self.chain.len()
+    }
 }
