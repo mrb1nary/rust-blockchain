@@ -1,6 +1,7 @@
-use chrono::{format, Utc};
+use chrono::Utc;
 use sha2::{Digest, Sha256};
 
+#[derive(Debug)]
 pub struct Block {
     pub index: u32,
     pub timestamp: u128,
@@ -11,7 +12,7 @@ pub struct Block {
 }
 
 impl Block {
-    fn new(index: u32, prev_hash: String, data: String) -> Block {
+    pub fn new(index: u32, prev_hash: String, data: String) -> Block {
         let timestamp = Utc::now().timestamp();
         let mut block = Block {
             index,
@@ -25,7 +26,7 @@ impl Block {
         block
     }
 
-    fn calculate_hash(&self) -> String {
+    pub fn calculate_hash(&self) -> String {
         let data_to_hash = format!(
             "{}{}{}{}{}",
             self.index, self.timestamp, self.prev_hash, self.nonce, self.data
@@ -36,7 +37,7 @@ impl Block {
         format!("{:x}", hasher.finalize())
     }
 
-    fn mine(&mut self) {
+    pub fn mine(&mut self) {
         let difficulty_level = "00000";
 
         loop {
