@@ -1,5 +1,7 @@
 mod block;
 mod blockchain;
+mod transaction;
+
 
 fn main() {
     let block = block::Block::new(0, String::from("0"), String::from("Genesis block"));
