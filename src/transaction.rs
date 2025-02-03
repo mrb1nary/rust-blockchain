@@ -9,6 +9,7 @@ pub struct Transaction {
 }
 
 impl Transaction {
+    // This function creates a new transaction but does not add it to the blockchain
     pub fn new(sender: String, recipient: String, amount: f64) -> Self {
         Transaction {
             sender,

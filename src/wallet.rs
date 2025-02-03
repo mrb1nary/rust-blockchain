@@ -10,6 +10,7 @@ pub struct Wallet {
 }
 
 impl Wallet {
+    // Create a new wallet with a random UUID and air drop 10.0 coins
     pub fn new() -> Self {
         let wallet = Wallet {
             address: Uuid::new_v4().to_string(),
@@ -65,7 +66,6 @@ impl Wallet {
         }
     }
 
-    // Optional: Add method to check balance
     pub fn get_balance(&self) -> f64 {
         println!(
             "💰 {} Current Balance: ${}",

@@ -22,7 +22,7 @@ impl Block {
             nonce: 0,
             data,
         };
-        block.mine();
+        block.mine();  //Block will be mined as soon as it is created
         block
     }
 
@@ -38,7 +38,7 @@ impl Block {
     }
 
     pub fn mine(&mut self) {
-        let difficulty_level = "00000";
+        let difficulty_level = "00000"; //You can increase the difficulty but it would take more time
 
         loop {
             self.nonce += 1;
