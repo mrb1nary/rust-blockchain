@@ -25,14 +25,6 @@ cargo build --release
 cargo run
 ```
 
-## 📌 Usage
-
-### 1️⃣ Generate a Wallet
-Run the wallet command to create a new wallet:
-```sh
-cargo run -- wallet new
-```
-
 ## 📊 Blockchain Architecture
 
 ```mermaid
